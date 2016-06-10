@@ -12,22 +12,18 @@ $('#beerSubmit').on('click', function() {
 
 function displayBeerStats() {
 	var key = "fe7efdc02eeb3b9ec8d79665a793e270";
-	var queryURL = "http://api.brewerydb.com/v2/search";
+	var differentKey = "c02a0cf5f068d13a06050a1451d814f8";
+	var queryURL = "http://api.brewerydb.com/v2/search?q=" + beer + "&type=beer&withBreweries=Y&format=json&key=" + key;
+	console.log(queryURL);
 	$.ajax({
 		url: queryURL,
 		type: 'GET',
-		dataType: 'json',
-		jsonp: 'jsonp_callback',
-		data: {
-			q: beer,
-			type: 'beer',
-			withBreweries: 'Y',
-			format: 'jsonp',
-			key: key
-		}
+		async: false,
+		contentType: "application/json",
+		dataType: 'jsonp'
+	}).done(function(response) {
+		console.log(response);
+		var beerData = response.data;
+		console.log(beerData);
 	});
-}
-
-window.jsonp_callback = function (data) {
-	console.log('much wow', data);
 }
