@@ -16,14 +16,15 @@ $('#beerSubmit').on('click', function() {
 	}
 	beer = $('#beerInput').val().trim();
 	console.log(beer);
-	$('#info').hide();
 	$('.form-inline').css('margin-top', '35px');
 	$('#beerInput').val("");
 	$('#newRow').empty();
 	$('#newRow').append("<tr><th>Name</th><th>Label</th><th>ABV</th><th>Description</th><th>Style</th><th>Brewery</th><th>Location</th></tr>");
 	displayBeerStats();
+	$("#loading-gif").show().css('display', 'block !important');
 	return false;
 });
+
 
 function displayBeerStats() {
 	var key = "88FE890DEF0863F2929FFBC8575FF7F224A431E3";
@@ -35,6 +36,7 @@ function displayBeerStats() {
 		type: 'GET',
 	}).done(function(data) {
 		console.log(data);
+		$( "#loading-gif" ).hide();
 		var beerData = data.response.beers.items;
 		console.log(beerData);
 		beerData.forEach(function(b) {
