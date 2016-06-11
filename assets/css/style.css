@@ -6,13 +6,65 @@
 body {
 	background-color: #F5930A; 
 	font-family: 'beerFont';
+}
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.well {
+	width: 70%;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#map {
+  height: 300px;
+  width: 757px;
+}
+
+p {
+	margin: 0 0 15px;
+}
+
+th {
+	text-align: center;
+}
+
+table {
+	margin-top: 35px;
+}
+
+table img {
+	height: 100px;
+	width: 100px;
+}
+
+.table-hover>tbody>tr:hover {
+	background-color: #FFFDD0;
+}
+
+.hide {
+	display: none;
+}
+
+#beer-icon {
+	margin-top: -3px;
 }
 
 #title {
+	margin-top: 0;
+	padding-top: 17px;
 	font-size: 78px;
+}
+
+#ask {
+	font-size: 30px;
 	margin-top: 35px;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 
 #beerInput {
@@ -32,8 +84,6 @@ body {
 .container-fluid{
 	height: 40px;
 	background-color: #ffcc00;
-
-
 }
 
 .glyphicon-search {
