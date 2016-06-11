@@ -49,6 +49,11 @@ function initMap() {
     center: pos,
     zoom: 15
   });
+  var marker = new google.maps.Marker({
+    position: pos,
+    map: map,
+    title: 'You Are Here'
+  });
 }
 
 
