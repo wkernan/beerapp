@@ -2,6 +2,17 @@ var beer = "";
 var distance = 0;
 var map;
 var pos;
+var dest;
+var bars = [
+	{
+		name: 'The Goodnight',
+		lon: -97.734407,
+		lat: 30.358183,
+		beers: ["pearl snap", "fireman's 4", "Dos XX", "Pabst Blue Ribbon"]
+	}
+]
+
+console.log(bars[0].beers[0]);
 
 $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
@@ -45,15 +56,62 @@ function displayBeerStats() {
 }
 
 function initMap() {
+	var directionsDisplay;
+	var directionsService = new google.maps.DirectionsService();
+	directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
   map = new google.maps.Map(document.getElementById('map'), {
     center: pos,
     zoom: 15
   });
+	dest = new google.maps.LatLng(37.7683909618184, -122.51089453697205)
+	console.log("new dest var", dest)
+  bars.forEach(function(b) {
+  	// spot = {
+  	// 	lat: b.lat,
+  	// 	lng: b.lon
+  	// }
+  	var dest = new google.maps.LatLng(b.lat, b.lon);
+
+  	var marker = new google.maps.Marker({
+  		position: pos,
+  		map: map,
+  		title: b.name,
+  		icon: '../assets/images/beer_icon.png'
+  	});
+  });
+
   var marker = new google.maps.Marker({
     position: pos,
     map: map,
     title: 'You Are Here'
   });
+  var request = {
+    origin: pos,
+    destination: dest,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  console.log(request.origin);
+  // console.log(request.destination);
+  directionsService.route(request, function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    }
+  });
+  directionsDisplay.setMap(map);
+  getDistance();
+}
+
+function getDistance() {
+	var distKey = "AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0";
+	var distUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + pos.lat + "," + pos.lng + "&destinations=" + dest.lat() + "," + dest.lng() + "&key=" + distKey;
+	//https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0
+	$.ajax({
+		url: distUrl,
+		type: 'GET',
+		dataType: "jsonp",
+	}).done(function(data) {
+		console.log("This is the distance matrix!!!",data);
+	});
 }
 
 
