@@ -3,6 +3,7 @@ var distance = 0;
 var map;
 var pos;
 var spot;
+var input = document.getElementById('beerInput');
 var bars = [
 	{
 		name: 'The Goodnight',
@@ -34,13 +35,17 @@ var bars = [
 	} 
 ]
 
+new Awesomplete(input, {
+	autoFirst: true,
+	list: ["dos xx", "thirsty goat", "real ale fireman's four", "modelo especial", "shiner blonde", "austin beerworks pearl snap", "hops and grain alt-eration", "sierra nevada", "austin beerworks peacemaker"]
+});
+
 function checkBeer() {
 	//need to build a function that checks what bars carry the beer, 
 	//once we know what bars carry the beer, 
 	//we can place them into the destinations array inside the distancematrix under the initMap() function.
 	//Then we can find distance from users position and find out which one is closest.
 }
->>>>>>> master
 
 $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
@@ -53,21 +58,13 @@ $('#beerSubmit').on('click', function() {
 		});
 	}
 	beer = $('#beerInput').val().trim();
-<<<<<<< HEAD
-	console.log(beer);
-=======
 	$('#info').addClass('hide');
->>>>>>> master
 	$('.form-inline').css('margin-top', '35px');
 	$('#beerInput').val("");
 	$('#newRow').empty();
 	$('#newRow').append("<tr><th>Name</th><th>Label</th><th>ABV</th><th>Description</th><th>Style</th><th>Brewery</th><th>Location</th></tr>");
 	displayBeerStats();
-<<<<<<< HEAD
-	$("#loading-gif").show().css('display', 'block !important');
-=======
 	$("#loading-gif").removeClass('hide').css('display', 'block !important');
->>>>>>> master
 	return false;
 });
 
@@ -80,10 +77,6 @@ function displayBeerStats() {
 		url: queryURL,
 		type: 'GET',
 	}).done(function(data) {
-<<<<<<< HEAD
-		console.log(data);
-=======
->>>>>>> master
 		$( "#loading-gif" ).hide();
 		var beerData = data.response.beers.items;
 		beerData.forEach(function(b) {
@@ -102,6 +95,8 @@ function initMap() {
     zoom: 15
   });
 
+  //Only using this for now to check how to place markers, will need to update
+  //To show all the markers, but also provide route to closest bar
   bars.forEach(function(b) {
   	spot = {
   		lat: b.lat,
@@ -125,21 +120,12 @@ function initMap() {
     destination: spot,
     travelMode: google.maps.TravelMode.DRIVING
   };
-<<<<<<< HEAD
-  console.log(request.origin);
-  console.log(request.destination);
-=======
->>>>>>> master
   directionsService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(result);
     }
   });
   directionsDisplay.setMap(map);
-<<<<<<< HEAD
-  //getDistance();
-=======
->>>>>>> master
   var geocoder = new google.maps.Geocoder;
 
   var service = new google.maps.DistanceMatrixService;
@@ -156,13 +142,7 @@ function initMap() {
     } else {
       var originList = response.originAddresses;
       var destinationList = response.destinationAddresses;
-<<<<<<< HEAD
-      console.log(response);
-      $('#output').html(originList[0] + " to " + destinationList[0] + ": " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
-      console.log('distance works');
-=======
       $('#output').html(originList[0] + " to <a href='" + bars[0].url + "' target='_blank'>" + bars[0].name + "</a>: " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
->>>>>>> master
     }
   });
 }
