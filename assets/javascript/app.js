@@ -8,10 +8,38 @@ var bars = [
 		name: 'The Goodnight',
 		lon: -97.734407,
 		lat: 30.358183,
-		beers: ["pearl snap", "fireman's 4", "Dos XX", "Pabst Blue Ribbon"],
+		beers: [""],
 		url: 'http://thegoodnightaustin.com/'
-	}
+	},
+	{
+		name: 'Black Sheep Lodge',
+		lon: -97.7711583,
+		lat: 30.2484081,
+		beers: [""],
+		url: 'http://www.blacksheeplodge.com/'
+	},
+	{
+		name: 'Haymaker',
+		lon: -97.7175856,
+		lat: 30.2848235,
+		beers: [""],
+		url: 'http://www.haymakeraustin.com/'
+	},
+	{
+		name: 'Austin Beer Garden Brewery',
+		lon: -97.768825,
+		lat: 30.245369,
+		beers: [""],
+		url: 'http://theabgb.com/' 
+	} 
 ]
+
+function checkBeer() {
+	//need to build a function that checks what bars carry the beer, 
+	//once we know what bars carry the beer, 
+	//we can place them into the destinations array inside the distancematrix under the initMap() function.
+	//Then we can find distance from users position and find out which one is closest.
+}
 
 $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
