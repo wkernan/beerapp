@@ -2,6 +2,17 @@ var beer = "";
 var distance = 0;
 var map;
 var pos;
+var spot;
+var bars = [
+	{
+		name: 'The Goodnight',
+		lon: -97.734407,
+		lat: 30.358183,
+		beers: ["pearl snap", "fireman's 4", "Dos XX", "Pabst Blue Ribbon"]
+	}
+]
+
+console.log(bars[0].beers[0]);
 
 $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
@@ -16,6 +27,7 @@ $('#beerSubmit').on('click', function() {
 	}
 	beer = $('#beerInput').val().trim();
 	console.log(beer);
+	$('#info').addClass('hide');
 	$('.form-inline').css('margin-top', '35px');
 	$('#beerInput').val("");
 	$('#newRow').empty();
@@ -47,15 +59,80 @@ function displayBeerStats() {
 }
 
 function initMap() {
+	var directionsDisplay;
+	var directionsService = new google.maps.DirectionsService();
+	directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
   map = new google.maps.Map(document.getElementById('map'), {
     center: pos,
     zoom: 15
   });
+
+  bars.forEach(function(b) {
+  	spot = {
+  		lat: b.lat,
+  		lng: b.lon
+  	}
+  	var marker = new google.maps.Marker({
+  		position: spot,
+  		map: map,
+  		title: b.name,
+  		icon: '../assets/images/beer_icon.png'
+  	});
+  });
+
   var marker = new google.maps.Marker({
     position: pos,
     map: map,
     title: 'You Are Here'
   });
+  var request = {
+    origin: pos,
+    destination: spot,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  console.log(request.origin);
+  console.log(request.destination);
+  directionsService.route(request, function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    }
+  });
+  directionsDisplay.setMap(map);
+  //getDistance();
+  var geocoder = new google.maps.Geocoder;
+
+  var service = new google.maps.DistanceMatrixService;
+  service.getDistanceMatrix({
+    origins: [pos],
+    destinations: [spot],
+    travelMode: google.maps.TravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.IMPERIAL,
+    avoidHighways: false,
+    avoidTolls: false
+  }, function(response, status) {
+    if (status !== google.maps.DistanceMatrixStatus.OK) {
+      alert('Error was: ' + status);
+    } else {
+      var originList = response.originAddresses;
+      var destinationList = response.destinationAddresses;
+      console.log(response);
+      $('#output').html(originList[0] + " to " + destinationList[0] + ": " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
+      console.log('distance works');
+    }
+  });
 }
+
+/* Was Getting CORS Error Again
+function getDistance() {
+	var distKey = "AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0";
+	var distUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + pos.lat + "," + pos.lng + "&destinations=" + spot.lat + "," + spot.lng + "&key=" + distKey;
+	//https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0
+	$.ajax({
+		url: distUrl,
+		type: 'GET',
+	}).done(function(data) {
+		console.log(data);
+	});
+}*/
 
 
