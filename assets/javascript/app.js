@@ -8,7 +8,8 @@ var bars = [
 		name: 'The Goodnight',
 		lon: -97.734407,
 		lat: 30.358183,
-		beers: ["pearl snap", "fireman's 4", "Dos XX", "Pabst Blue Ribbon"]
+		beers: ["pearl snap", "fireman's 4", "Dos XX", "Pabst Blue Ribbon"],
+		url: 'http://thegoodnightaustin.com/'
 	}
 ]
 
@@ -116,7 +117,7 @@ function initMap() {
       var originList = response.originAddresses;
       var destinationList = response.destinationAddresses;
       console.log(response);
-      $('#output').html(originList[0] + " to " + destinationList[0] + ": " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
+      $('#output').html(originList[0] + " to <a href='" + bars[0].url + "' target='_blank'>" + bars[0].name + "</a>: " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
       console.log('distance works');
     }
   });
