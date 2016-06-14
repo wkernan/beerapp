@@ -3,6 +3,7 @@ var distance = 0;
 var map;
 var pos;
 var spot;
+var input = document.getElementById('beerInput');
 var bars = [
 	{
 		name: 'The Goodnight',
@@ -33,6 +34,11 @@ var bars = [
 		url: 'http://theabgb.com/' 
 	} 
 ]
+
+new Awesomplete(input, {
+	autoFirst: true,
+	list: ["dos xx", "thirsty goat", "real ale fireman's four", "modelo especial", "shiner blonde", "austin beerworks pearl snap", "hops and grain alt-eration", "sierra nevada", "austin beerworks peacemaker"]
+});
 
 function checkBeer() {
 	//need to build a function that checks what bars carry the beer, 
@@ -89,6 +95,8 @@ function initMap() {
     zoom: 15
   });
 
+  //Only using this for now to check how to place markers, will need to update
+  //To show all the markers, but also provide route to closest bar
   bars.forEach(function(b) {
   	spot = {
   		lat: b.lat,
@@ -138,5 +146,18 @@ function initMap() {
     }
   });
 }
+
+/* Was Getting CORS Error Again
+function getDistance() {
+	var distKey = "AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0";
+	var distUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + pos.lat + "," + pos.lng + "&destinations=" + spot.lat + "," + spot.lng + "&key=" + distKey;
+	//https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0
+	$.ajax({
+		url: distUrl,
+		type: 'GET',
+	}).done(function(data) {
+		console.log(data);
+	});
+}*/
 
 
