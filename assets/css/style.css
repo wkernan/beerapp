@@ -24,6 +24,11 @@ html, body {
 #map {
   height: 300px;
   width: 757px;
+  border-radius: 4px;
+}
+
+#loading-gif {
+	margin-top: 30px;
 }
 
 p {
@@ -76,9 +81,6 @@ table img {
 	height: 40px;
 }
 
-#loading-gif {
-	display: none !important;
-}
 .container-top {
 	height: 110px;
 	background-color: #FFFDD0;
