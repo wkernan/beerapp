@@ -27,6 +27,7 @@ $('#beerSubmit').on('click', function() {
 	}
 	beer = $('#beerInput').val().trim();
 	console.log(beer);
+	$('#info').addClass('hide');
 	$('.form-inline').css('margin-top', '35px');
 	$('#beerInput').val("");
 	$('#newRow').empty();
