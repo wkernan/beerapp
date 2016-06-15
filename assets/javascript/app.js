@@ -107,6 +107,7 @@ $('#beerSubmit').on('click', function() {
 			initMap();
 		});
 	}
+	$("#loading-gif").removeClass('hide').css('display', 'block !important');
 	beer = $('#beerInput').val().trim();
 	$('#info').addClass('hide');
 	$('.form-inline').css('margin-top', '35px');
@@ -114,7 +115,6 @@ $('#beerSubmit').on('click', function() {
 	$('#newRow').empty();
 	$('#newRow').append("<tr><th>Name</th><th>Label</th><th>ABV</th><th>Description</th><th>Style</th><th>Brewery</th><th>Location</th></tr>");
 	displayBeerStats();
-	$("#loading-gif").removeClass('hide').css('display', 'block !important');
 	return false;
 });
 
@@ -127,7 +127,7 @@ function displayBeerStats() {
 		url: queryURL,
 		type: 'GET',
 	}).done(function(data) {
-		$( "#loading-gif" ).hide();
+		$( "#loading-gif" ).addClass('hide');
 		var beerData = data.response.beers.items;
 		beerData.forEach(function(b) {
 			$('#newRow').append("<tr><td>" + b.beer.beer_name + "</td><td><img src='" + b.beer.beer_label +"'></td><td>" + b.beer.beer_abv + "%</td><td>" + b.beer.beer_description + "</td><td>" + b.beer.beer_style + "</td><td><a href='" + b.brewery.contact.url + "' target='_blank'>" + b.brewery.brewery_name + "</a></td><td>" + b.brewery.location.brewery_city + ", " + b.brewery.location.brewery_state + " distance: " + distance + " mi</td></tr>");
