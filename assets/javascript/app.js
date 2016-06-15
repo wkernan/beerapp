@@ -35,6 +35,7 @@ var bars = [
 	} 
 ]
 
+//Where the array of beers is stored for the autocomplete
 new Awesomplete(input, {
 	autoFirst: true,
 	list: ["dos xx", "thirsty goat", "real ale fireman's four", "modelo especial", "shiner blonde", "austin beerworks pearl snap", "hops and grain alt-eration", "sierra nevada", "austin beerworks peacemaker"]
@@ -140,24 +141,11 @@ function initMap() {
     if (status !== google.maps.DistanceMatrixStatus.OK) {
       alert('Error was: ' + status);
     } else {
+    	console.log('working');
       var originList = response.originAddresses;
       var destinationList = response.destinationAddresses;
       $('#output').html(originList[0] + " to <a href='" + bars[0].url + "' target='_blank'>" + bars[0].name + "</a>: " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
     }
   });
 }
-
-/* Was Getting CORS Error Again
-function getDistance() {
-	var distKey = "AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0";
-	var distUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + pos.lat + "," + pos.lng + "&destinations=" + spot.lat + "," + spot.lng + "&key=" + distKey;
-	//https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0
-	$.ajax({
-		url: distUrl,
-		type: 'GET',
-	}).done(function(data) {
-		console.log(data);
-	});
-}*/
-
 
