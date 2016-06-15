@@ -32,50 +32,49 @@ var bars = [
 		lat: 30.245369,
 		beers: [""],
 		url: 'http://theabgb.com/' 
-	} 
-
+	}, 
 	{
 		name: 'Craft Pride',
 		lon: -97.7410793,
 		lat: 30.2579386,
 		beers: [""],
 		url: 'http://craftprideaustin.com/'
-	}
+	},
 	{
-		name: 'Draught House Pub & Brewery'
+		name: 'Draught House Pub & Brewery',
 		lon: -97.7450796,
 		lat: 30.3110813,
 		beers: [""],
 		url: 'http://www.draughthouse.com/'
-	}
+	},
 	{
 		name: 'Easy Tiger',
 		lon: -97.737847,
 		lat: 30.265923,
 		beers: [""],
 		url: 'http://workhorsebar.com/'
-	}
+	},
 	{
 		name: 'Flying Saucer Draught Emporium',
 		lon: -97.7362631,
 		lat: 30.3154336,
 		beers: [""],
 		url: 'http://www.beerknurd.com/locations/austin-flying-saucer'
-	}
+	},
 	{
 		name: 'Brew Exchange',
 		lon: -97.7521114,
 		lat: 30.2702684,
 		beers: [""],
 		url: 'http://brewexchangeaustin.com/'
-	}
+	},
 	{
 		name: 'The Ginger Man',
 		lon: -97.7481522,
 		lat: 30.266304,
 		beers: [""],
 		url: 'http://thegingerman.com/austin/'
-	}
+	},
 	{
 		name: 'The Brass Tap',
 		lon: -97.6796838,
