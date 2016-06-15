@@ -157,7 +157,7 @@ function getDistance() {
 		type: 'GET',
 	}).done(function(data) {
 		console.log(data);
-	});*/
-}
+	});
+}*/
 
 
