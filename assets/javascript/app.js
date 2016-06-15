@@ -38,7 +38,7 @@ var bars = [
 //Where the array of beers is stored for the autocomplete
 new Awesomplete(input, {
 	autoFirst: true,
-	list: ["dos xx", "thirsty goat", "real ale fireman's four", "modelo especial", "shiner blonde", "austin beerworks pearl snap", "hops and grain alt-eration", "sierra nevada", "austin beerworks peacemaker"]
+	list: ["dos xx", "thirsty goat", "real ale fireman's four", "modelo especial", "shiner blonde", "austin beerworks pearl snap", "hops and grain alt-eration", "sierra nevada", "austin beerworks peacemaker", "hell yes", "industry", "day trip", "superliner", "big mama red", "legacy", "black thunder german schwarz", "peacemaker extra pale", "brewhouse brown ale", "rio blanco pale ale", "full moon pale rye ale", "sisyphus barleywine", "hans pils", "devils backbone", "lost golad API", "austin amber ale", "bootlegger brown ale", "convict hill oatmeal stout", "independence pale ale", "comemrcial suicide", "wytchmaker rye IPA", "black metal imperial stout", "boxers revenge", "whiskey suicide", "drink'in the sunbelt", "pecan porter", "pilz", "big bark", "amber lager", "liberation american IPA", "hefeweizen", "pale dog", "the one they call zoe", "belgian golden ale", "belgian saison", "naked nun", "philosophizer", "ramber ale", "scratchin hippo", "black rhino", "tripel b", "dancin' monks", "rocket 100", "convict hill", "the green room", "sputnik", "heavy machinery double IPA", "recalcitrant dockhand", "cascabel cream stout", "wild bear", "vintage monks", "sweep the leg", "black metal imperial stout", "brahmale", "metamodern session IPA", "a pale mosaic", "the jaguar shark", "hop overboard", "lobo negro", "real heavy", "holiday", "senor viejo", ]
 });
 
 function checkBeer() {
@@ -148,4 +148,3 @@ function initMap() {
     }
   });
 }
-
