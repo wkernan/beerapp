@@ -197,7 +197,7 @@ function initMap() {
   });
 }
 
-/* Was Getting CORS Error Again
+ /*//Was Getting CORS Error Again
 function getDistance() {
 	var distKey = "AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0";
 	var distUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + pos.lat + "," + pos.lng + "&destinations=" + spot.lat + "," + spot.lng + "&key=" + distKey;
