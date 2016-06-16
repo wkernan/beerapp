@@ -14,6 +14,10 @@ html, body {
   padding: 0;
 }
 
+a {
+	color: #FFCC00;
+}
+
 .well {
 	width: 70%;
 	margin-top: 30px;
@@ -93,4 +97,16 @@ table img {
 
 .glyphicon-search {
 	font-size: 24px;
+}
+
+@media screen and (max-width: 1199px) {
+	#map {
+		width: 618px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#map {
+		width: 462px;
+	}
 }
