@@ -93,6 +93,7 @@ table img {
 .container-fluid{
 	height: 40px;
 	background-color: #ffcc00;
+	margin-top: -2px;
 }
 
 .glyphicon-search {
@@ -108,5 +109,11 @@ table img {
 @media screen and (max-width: 991px) {
 	#map {
 		width: 462px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	#map {
+		width: 463px;
 	}
 }

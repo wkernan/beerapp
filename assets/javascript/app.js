@@ -14,7 +14,7 @@ var bars = [
 		name: 'The Goodnight',
 		lon: -97.734407,
 		lat: 30.358183,
-		beers: ["lonestar", "real ale firemans 4", "shiner blonde", "austin beerworks pearl snap", "shiner bock", "hops and grain alt-eration", "austin beerworks peacemaker extra pale", "hops and grain pale dog ale", "real ale lost gold", "austin beerworks fire eagle", "adelbert's dancin' monks", "adelbert's philosophizer", "real ale devils backbone"],
+		beers: ["thirsty planet thirsty goat amber", "lonestar", "real ale firemans 4", "shiner blonde", "austin beerworks pearl snap", "shiner bock", "hops and grain alt-eration", "austin beerworks peacemaker extra pale", "hops and grain pale dog ale", "real ale lost gold", "austin beerworks fire eagle", "adelbert's dancin' monks", "adelbert's philosophizer", "real ale devils backbone"],
 		url: 'http://thegoodnightaustin.com/'
 	},
 	{
@@ -89,6 +89,8 @@ var bars = [
 	}
 ]
 
+$('.well').addClass("hide");
+
 //Where the array of beers is stored for the autocomplete
 new Awesomplete(input, {
 	autoFirst: true,
@@ -121,28 +123,25 @@ $('#beerSubmit').on('click', function() {
 			}
 		})
 	})
-	console.log(barArr);
 	//get user location
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			pos = {
 				lat: position.coords.latitude,
-				//lat: 30.2397576,
-				//lng: -97.7554287
 				lng: position.coords.longitude
 			};
 			initMap();
 			displayBeerStats();
 		});
 	}
+	$('.well').removeClass('hide');
 	$("#loading-gif").removeClass('hide').css('display', 'block !important');
 	$('#info').addClass('hide');
 	$('.form-inline').css('margin-top', '35px');
 	$('#beerInput').val("");
-	$('#newRow').empty();
+	$('#beerList > tbody').empty();
 	//create table heading
-	$('#newRow').append("<tr><th>Name</th><th>Label</th><th>ABV</th><th>Description</th><th>Style</th><th>Brewery</th><th>Location</th></tr>");
-	//displayBeerStats();
+	//$('#beerList > tbody').append("<tr><th>Name</th><th>Label</th><th>ABV</th><th>Description</th><th>Style</th><th>Brewery</th><th>Location</th></tr>");
 	return false;
 });
 
@@ -158,8 +157,8 @@ function displayBeerStats() {
 		$( "#loading-gif" ).addClass('hide');
 		var beerData = data.response.beers.items;
 		beerData.forEach(function(b) {
-			$('#newRow').append("<tr><td>" + b.beer.beer_name + "</td><td><img src='" + b.beer.beer_label +"'></td><td>" + b.beer.beer_abv + "%</td><td>" + b.beer.beer_description + "</td><td>" + b.beer.beer_style + "</td><td><a href='" + b.brewery.contact.url + "' target='_blank'>" + b.brewery.brewery_name + "</a></td><td><a href='" + barUrl + "' target='_blank'>" + barName + "</a> distance: " + distance + " mi</td></tr>");
-			$('#newRow').removeClass('hide');
+			$('#beerList > tbody').append("<tr><td>" + b.beer.beer_name + "</td><td><img src='" + b.beer.beer_label +"'></td><td>" + b.beer.beer_abv + "%</td><td>" + b.beer.beer_description + "</td><td>" + b.beer.beer_style + "</td><td><a href='" + b.brewery.contact.url + "' target='_blank'>" + b.brewery.brewery_name + "</a></td><td><a href='" + barUrl + "' target='_blank'>" + barName + "</a> distance: " + distance + " mi</td></tr>");
+			$('#beerList').removeClass('hide');
 		});
 	});
 }
@@ -169,7 +168,7 @@ function initMap() {
 	var directionsService = new google.maps.DirectionsService();
 	directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 	//center map on user location
-  map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
     center: pos,
     zoom: 15
   });
@@ -187,17 +186,15 @@ function initMap() {
   	});
   });
   //place pin to show user position
-  var marker = new google.maps.Marker({
-    position: pos,
-    map: map,
-    title: 'You Are Here'
-  });
+    var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      title: 'You Are Here'
+    });
 
   var service = new google.maps.DistanceMatrixService;
   //get distance of each bar that sells beer user entered
-  barArr.forEach(function(bar) {
-  	console.log(bar.lat);
-  	console.log(bar.lon);
+  barArr.forEach(function(bar, index) {
   	service.getDistanceMatrix({
   		origins: [pos],
   		destinations: [{lat:bar.lat, lng:bar.lon}],
@@ -209,9 +206,6 @@ function initMap() {
   		if(status !== google.maps.DistanceMatrixStatus.OK) {
   			alert('Error was: ' + status);
   		} else {
-  			console.log(response);
-  			console.log(bar.name + ' is ' + parseInt(response.rows[0].elements[0].distance.text));
-  			console.log(distance);
   			var num = parseInt(response.rows[0].elements[0].distance.text)
   			//if statement to grab the closest bar from the user and then use those stats to get the directions
   			if(num < distance) {
@@ -220,8 +214,6 @@ function initMap() {
   				barUrl = bar.url;
   				barLat = bar.lat;
   				barLng = bar.lon;
-				  console.log(barLat);
-  				console.log(barLng);
   				//show directions on map to closest bar
 				  var request = {
 				    origin: pos,
@@ -238,6 +230,7 @@ function initMap() {
   				var originList = response.originAddresses;
   				var destinationList = response.destinationAddresses;
   				$('#output').html(originList[0] + " to <a href='" + bar.url + "' target='_blank'>" + bar.name + "</a>: " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
+
   			}
   		}
   	})
