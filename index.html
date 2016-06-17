@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Texas Beer Away</title> 
-	<meta name="viewport" content="initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="assets/css/awesomplete.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Inknut+Antiqua:400,900' rel='stylesheet' type='text/css'>
-	<link rel="icon" type="image/x-icon" href="assets/images/beer.png">
-</head>
-<body>
-	<div class="container-top">
-            <div class="col-12-sm text-center">	
-            	<h1 id="title">Texas Beer Away!</h1>
-            </div>
-         </div>
-    <div class="container-fluid">
-     		<div class="col-12-sm">
-     		</div>
-     	</div>
-	<div class="container text-center">
-		<div id="info">
-			<h1 id="ask">What are you having?</h1>
-			<p>Input a local Texas beer and we'll give you some info on it, as well as how far away you are from the nearest bar that sells it.</p>
-		</div>
-		<form class="form-inline">
-			<div class="form-group">
-				<input type="text" class="form-control awesomplete" placeholder="Beer" id="beerInput">
+	<head>
+		<title>Texas Beer Away</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/css/awesomplete.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Inknut+Antiqua:400,900' rel='stylesheet' type='text/css'>
+		<link rel="icon" type="image/x-icon" href="assets/images/beer.png">
+	</head>
+	<body>
+		<div class="container-top">
+			<div class="row">
+				<div class="col-12-md text-center">
+					<h1 id="title">Texas Beer Away!</h1>
+				</div>
 			</div>
-			<button type="submit" class="btn btn-default" id="beerSubmit">
-				<img id="beer-icon" src="assets/images/beer.png">
-			</button> 
-		<!-- loading gif here  src: http://preloaders.net/en/circular/2 -->	
-		</form>
-		<table class="table table-hover hide" id="newRow">
-			<tr>
-				<th>Name</th>
-				<th>Label</th>
-				<th>ABV</th>
-				<th>Description</th>
-				<th>Style</th>
-				<th>Brewery</th>
-				<th>Location</th>
-			</tr>
-		</table>
-		<div id="loading-gif" class="hide">
-			<img src="assets/images/beer_pour.gif" alt="Loading..."/>
-			<h2>Loading...</h2>
-		</div>
-		<div class="well">
-			<div id="output">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12-md">
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="well">
-			<div id="map">
+			<div class="container text-center">
+				<div id="info">
+					<h1 id="ask">What are you having?</h1>
+					<p>Input a local Texas beer and we'll give you some info on it, as well as how far away you are from the nearest bar that sells it.</p>
+				</div>
+				<form class="form-inline">
+					<div class="form-group">
+						<input type="text" class="form-control awesomplete" placeholder="Beer" id="beerInput">
+					</div>
+					<button type="submit" class="btn btn-default" id="beerSubmit">
+					<img id="beer-icon" src="assets/images/beer.png">
+					</button>
+					<!-- loading gif here  src: http://preloaders.net/en/circular/2 -->
+				</form>
+				<table class="table table-hover hide" id="beerList">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Label</th>
+							<th>ABV</th>
+							<th>Description</th>
+							<th>Style</th>
+							<th>Brewery</th>
+							<th>Location</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			<div id="loading-gif" class="hide">
+				<img src="assets/images/beer_pour.gif" alt="Loading..."/>
+				<h2>Loading...</h2>
+			</div>
+			<div class="well">
+				<div id="output">
+				</div>
+			</div>
+			<div class="well">
+				<div id="map">
+				</div>
 			</div>
 		</div>
 	</div>
-<script src="assets/javascript/awesomplete.min.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="assets/javascript/app.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0"></script>
-</body>
+		<script src="assets/javascript/awesomplete.min.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="assets/javascript/app.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdCWO-KjO5Gp_jN19FuqyPyjr84sbgtO0"></script>
+	</body>
 </html>
