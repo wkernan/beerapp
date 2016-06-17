@@ -126,10 +126,10 @@ $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			pos = {
-				//lat: position.coords.latitude,
-				lat: 30.2397576,
-				lng: -97.7554287
-				//lng: position.coords.longitude
+				lat: position.coords.latitude,
+				//lat: 30.2397576,
+				//lng: -97.7554287
+				lng: position.coords.longitude
 			};
 			initMap();
 			displayBeerStats();
