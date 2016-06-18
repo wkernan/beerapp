@@ -104,8 +104,8 @@ $('#beerSubmit').on('click', function() {
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
 			};
-			initMap();
 			displayBeerStats();
+			initMap();
 		});
 	}
 	setTimeout(function() {$('.well').removeClass('hide')}, 5000);
