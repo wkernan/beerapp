@@ -71,14 +71,6 @@ new Awesomplete(input, {
 	list: ["thirsty planet thirsty goat amber", "zilker brewing marco ipa", "oasis slow ride pale ale", "thirsty planet buckethead ipa", "real ale firemans 4", "512 funky kingston (BLT)", "shiner blonde", "shiner bock", "austin beerworks pearl snap", "austin beerworks heisenberg", "austin beerworks fire eagle", "hops and grain alt-eration", "hell yes", "industry", "day trip", "superliner", "big mama red", "legacy", "austin beerworks black thunder", "austin beerworks peacemaker extra pale", "brewhouse brown ale", "rio blanco pale ale", "full moon pale rye ale", "sisyphus barleywine", "hans pils", "real ale devils backbone", "lost gold API", "bootlegger brown ale", "convict hill oatmeal stout", "independence pale ale", "independence stash ipa", "commercial suicide", "wytchmaker rye IPA", "black metal imperial stout", "boxers revenge", "whiskey suicide", "drink'in the sunbelt", "pecan porter", "live oak pilz", "live oak big bark amber", "liberation american IPA", "live oak hefeweizen", "revolver blood and honey",  "hops and grain pale dog ale", "the one they call zoe", "belgian golden ale", "belgian saison", "adelbert's naked nun", "adelbert's philosophizer", "deep ellum ipa", "ramber ale", "adelbert's scratchin hippo", "adelbert's black rhino", "adelbert's tripel b", "adelbert's dancin' monks", "rocket 100", "convict hill", "the green room", "sputnik", "heavy machinery double IPA", "recalcitrant dockhand", "cascabel cream stout", "wild bear", "vintage monks", "sweep the leg", "black metal imperial stout", "brahmale", "metamodern session IPA", "hops and grain mosaic pale ale", "hops and grain greenhouse ipa", "the jaguar shark", "hop overboard", "lobo negro", "real heavy", "holiday", "senor viejo", "lonestar", "real ale lost gold", "512 ipa", "512 pecan porter", "austin eastciders dry original cider", "austin beerworks gringo de mayo", "friends and allies noisy cricket", "blue owl spirit animal sour pale ale"]
 });
 
-//Might not need this function anymore
-/*function checkBeer() {
-	//need to build a function that checks what bars carry the beer, 
-	//once we know what bars carry the beer, 
-	//we can place them into the destinations array inside the distancematrix under the initMap() function.
-	//Then we can find distance from users position and find out which one is closest.
-}*/
-
 $('#beerSubmit').on('click', function() {
 	//reset all the variables for each on.click
 	distance = 10000;
@@ -220,21 +212,4 @@ function initMap() {
   		}
   	})
   })
-  /*service.getDistanceMatrix({
-    origins: [{lat:30.1482166, lng:-97.8326257}],
-    destinations: [spot],
-    travelMode: google.maps.TravelMode.DRIVING,
-    unitSystem: google.maps.UnitSystem.IMPERIAL,
-    avoidHighways: false,
-    avoidTolls: false
-  }, function(response, status) {
-    if (status !== google.maps.DistanceMatrixStatus.OK) {
-      alert('Error was: ' + status);
-    } else {
-    	console.log(response);
-      var originList = response.originAddresses;
-      var destinationList = response.destinationAddresses;
-      $('#output').html(originList[0] + " to <a href='" + bars[0].url + "' target='_blank'>" + bars[0].name + "</a>: " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
-    }
-  });*/
 }
