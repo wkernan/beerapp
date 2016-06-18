@@ -1,6 +1,6 @@
 @font-face {
 	font-family: beerFont;
-	src: url('../images/beers.TTF') format('truetype');
+	src: url('../images/beers.ttf') format('truetype');
 }
 
 body {
