@@ -62,7 +62,8 @@ var bars = [
 ]
 
 $('.well').addClass("hide");
-$('.thumbnail').addClass("hide");
+$('#map').addClass('hide');
+//$('.thumbnail').addClass("hide");
 
 //Where the array of beers is stored for the autocomplete
 new Awesomplete(input, {
@@ -100,20 +101,23 @@ $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			pos = {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
+				//lat: position.coords.latitude,
+				//lng: position.coords.longitude
+				lat: 30.2397576,
+				lng: -97.7554287
 			};
 			initMap();
 			displayBeerStats();
 		});
 	}
-	$('.well').removeClass('hide');
+	setTimeout(function() {$('.well').removeClass('hide')}, 5000);
 	$('.thumbnail').removeClass("hide");
 	$("#loading-gif").removeClass('hide').css('display', 'block !important');
 	$('#info').addClass('hide');
 	$('.form-inline').css('margin-top', '35px');
 	$('#beerInput').val("");
 	$('#beerList > tbody').empty();
+	$('#map').removeClass('hide');
 	//create table heading
 	//$('#beerList > tbody').append("<tr><th>Name</th><th>Label</th><th>ABV</th><th>Description</th><th>Style</th><th>Brewery</th><th>Location</th></tr>");
 	return false;

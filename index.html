@@ -12,20 +12,13 @@
 		<link rel="icon" type="image/x-icon" href="assets/images/beer.png">
 	</head>
 	<body>
-		<div class="container-top">
-			<div class="row">
-				<div class="col-12-md text-center">
-					<h1 id="title">Texas Beer Away!</h1>
-				</div>
+		<div class="text-center">
+			<div class="container-top">
+				<h1 id="title">Texas Beer Away!</h1>
+			</div>
+			<div class="container-mid">
 			</div>
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-12-md">
-					</div>
-				</div>
-			</div>
-				
-			<div class="container text-center">
 				<div id="info">
 					<h1 id="ask">What are you having?</h1>
 					<p>Input a local Texas beer and we'll give you some info on it, as well as how far away you are from the nearest bar that sells it.</p>
@@ -39,46 +32,42 @@
 					</button>
 					<!-- loading gif here  src: http://preloaders.net/en/circular/2 -->
 				</form>
-				<table class="table table-hover hide" id="beerList">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Label</th>
-							<th>ABV</th>
-							<th>Description</th>
-							<th>Style</th>
-							<th>Brewery</th>
-							<th>Location</th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
-			<div id="loading-gif" class="hide">
-				<img src="assets/images/beer_pour.gif" alt="Loading..."/>
-				<h2>Loading...</h2>
-			</div>
-			<div class="well">
-				<div id="output">
+				<div class="table-responsive">
+					<table class="table table-hover hide" id="beerList">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Label</th>
+								<th>ABV</th>
+								<th>Description</th>
+								<th>Style</th>
+								<th>Brewery</th>
+								<th>Location</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
 				</div>
-			</div>
-			<div class="well">
+				<div id="loading-gif" class="hide">
+					<img src="assets/images/beer_pour.gif" alt="Loading..."/>
+					<h2>Loading...</h2>
+				</div>
+				<div class="well">
+					<div id="output">
+					</div>
+				</div>
 				<div id="map">
 				</div>
+				<div class="thumbnail">
+      		<img src="assets/images/icon-sputnik.png" class="text-center" alt="austin beerworks icon">
+    			<div class="caption">
+		        <h3 class="text-center">Beer of the Month!</h3>
+		        <p class="text-center">Austin Beerworks Pearl Snap</p>
+		        <p class="text-center"><a href="http://www.austinbeerworks.com/" target="_blank" class="btn brew-button" role="button">Austin Beerworks</a></p>
+    			</div>
+    		</div>
 			</div>
 		</div>
-		<div class="row">
-			  <div class="col-sm-6 col-md-4 col-md-offset-4">
-			    <div class="thumbnail">
-			      <img src="assets/images/icon-sputnik.png" class="text-center" alt="austin beerworks icon">
-			      <div class="caption">
-			        <h3 class="text-center">Beer of the Month!</h3>
-			        <p class="text-center">Austin Beerworks Pearl Snap</p>
-			        <p class="text-center"><a href="http://www.austinbeerworks.com/" target="_blank" class="btn brew-button" role="button">Austin Beerworks</a></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-	</div>
 		<script src="assets/javascript/awesomplete.min.js"></script>
 		<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

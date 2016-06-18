@@ -18,16 +18,25 @@ a {
 	color: #FFCC00;
 }
 
+.thumbnail {
+	margin: 25px;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .well {
-	width: 70%;
+	width: 75%;
 	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #map {
+	margin-left: auto;
+	margin-right: auto;
   height: 300px;
-  width: 757px;
+  width: 835px;
   border-radius: 4px;
 }
 
@@ -90,10 +99,14 @@ table img {
 	background-color: #FFFDD0;
 }
 
-.container-fluid{
+.container-mid {
 	height: 40px;
 	background-color: #ffcc00;
 	margin-top: -2px;
+}
+
+.table-responsive {
+	border: none;
 }
 
 .glyphicon-search {
@@ -117,8 +130,35 @@ table img {
 	}
 }
 
+@media screen and (max-width: 839px) {
+	#title {
+		font-size: 55px;
+	}
+}
+
 @media screen and (max-width: 750px) {
 	#map {
-		width: 463px;
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	#beerInput {
+		width: 275px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#beerInput {
+		width: 245px;
+	}
+	#title {
+		font-size: 40px;
+	}
+	#ask {
+		font-size: 25px;
+	}
+	#map {
+		width: 275px;
 	}
 }
