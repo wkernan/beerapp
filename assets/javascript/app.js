@@ -101,10 +101,10 @@ $('#beerSubmit').on('click', function() {
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			pos = {
-				//lat: position.coords.latitude,
-				//lng: position.coords.longitude
-				lat: 30.2397576,
-				lng: -97.7554287
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+				//lat: 30.2397576,
+				//lng: -97.7554287
 			};
 			initMap();
 			displayBeerStats();
