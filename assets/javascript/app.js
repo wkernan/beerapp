@@ -103,8 +103,6 @@ $('#beerSubmit').on('click', function() {
 			pos = {
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
-				//lat: 30.2397576,
-				//lng: -97.7554287
 			};
 			initMap();
 			displayBeerStats();
