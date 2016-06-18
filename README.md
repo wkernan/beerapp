@@ -1,4 +1,4 @@
-# Texas Beer Away 
+# [Texas Beer Away](https://beer-away.herokuapp.com) 
 ### Responsive web app that shows users how close they are to a bar that sells their favorite local Texas beer
 
 
