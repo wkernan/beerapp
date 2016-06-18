@@ -21,80 +21,53 @@ var bars = [
 		name: 'Black Sheep Lodge',
 		lon: -97.7711583,
 		lat: 30.2484081,
-		beers: ["512 ipa", "512 pecan porter", "austin east ciders dry original cider", "austin beerworks gringo de mayo", "blue owl spirit animal sour pale ale", "hops and grain mosaic pale ale", "live oak big bark amber", "live oak hefeweizen", "real ale firemans 4", "revolver blood and honey", "thirsty planet thirsty goat amber", "thirsty planet buckethead ipa"],
+		beers: ["512 ipa", "512 pecan porter", "austin eastciders dry original cider", "austin beerworks gringo de mayo", "blue owl spirit animal sour pale ale", "hops and grain mosaic pale ale", "live oak big bark amber", "live oak hefeweizen", "real ale firemans 4", "revolver blood and honey", "thirsty planet thirsty goat amber", "thirsty planet buckethead ipa"],
 		url: 'http://www.blacksheeplodge.com/'
 	},
 	{
 		name: 'Haymaker',
 		lon: -97.7175856,
 		lat: 30.2848235,
-		beers: ["512 ipa", "512 pecan porter", "austin beerworks fire eagle", "austin beerworks heisenberg", "real ale firemans 4", "austin beerworks pearl snap", "austin east ciders dry original cider", "blue owl spirit animal sour pale ale", "deep ellum ipa", "friends and allies noisy cricket", "hops and grain mosaic pale ale", "hops and grain greenhouse ipa", "independence stash ipa", "live oak hefeweizen", "live oak pilz", "oasis slow ride pale ale", "real ale devils backbone", "revolver blood and honey", "thirsty planet thirsty goat amber", "thirsty planet buckethead ipa", "zilker brewing marco ipa"],
+		beers: ["512 ipa", "512 pecan porter", "austin beerworks fire eagle", "austin beerworks heisenberg", "real ale firemans 4", "austin beerworks pearl snap", "austin eastciders dry original cider", "blue owl spirit animal sour pale ale", "deep ellum ipa", "friends and allies noisy cricket", "hops and grain mosaic pale ale", "hops and grain greenhouse ipa", "independence stash ipa", "live oak hefeweizen", "live oak pilz", "oasis slow ride pale ale", "real ale devils backbone", "revolver blood and honey", "thirsty planet thirsty goat amber", "thirsty planet buckethead ipa", "zilker brewing marco ipa"],
 		url: 'http://www.haymakeraustin.com/'
 	},
 	{
 		name: 'Austin Beer Garden Brewery',
 		lon: -97.768825,
 		lat: 30.245369,
-		beers: [""],
+		beers: ["hell yes", "industry", "day trip", "superliner", "big mama red", "rocket 100", "chico's bail bonds", "el camino", "german sparkle party", "ysb #6 siouxsie's strawberry girl"],
 		url: 'http://theabgb.com/' 
 	}, 
 	{
 		name: 'Craft Pride',
 		lon: -97.7410793,
 		lat: 30.2579386,
-		beers: [""],
+		beers: ["4th tap mega citrus one", "4th tap renewal tamarind wheat", "big bend hefeweizen", "blue owl little boss", "blue owl saison puede", "circle blur", "community barrel-aged legion", "mosaic ipa", "freetail witicus", "guadalupe scotch ale", "texas honey ale", "independence austin amber", "independence stash", "last stand citra smash ipa", "lone pine yellow rose", "no label ridgeback amber", "pinthouse pizza electric jellyfish", "pinthouse pizza warning shot", "real ale 20th anniversary: imperial rye ipa", "real ale devil's backbone", "real ale highlander", "st. arnold amber", "shannon irish red", "thirsty planet thirsty goat amber", "zilker coffee milk stout nitro", "512 pecan porter nitro", "austin beerworks gringo de mayo", "austin beerworks peacemaker", "austin beerworks pearl snap", "buffalo bayou more cowbell", "collective brewing project suspicious delicious", "deep ellum dallas blonde", "deep ellum rye pils", "friends & allies noisy cricket", "hops & grain a pale mosaic", "hops & grain the one they call zoe", "lakewood dfw collaboration: rum cherry baltic", "lakewood porter", "lakewood temptress nitro", "lakewood zomer pils", "live oak berliner weisse", "live oak pilz", "martin house acheron", "martin house cellerman's reserve ipa", "oasis, tx luchesa", "oasis, tx slow ride", "rabbit hole rude jester", "revolver blood and honey", "save the world agnus dei", "southern star bombshell blonde", "buried hatchet nitro", "twisted x texmex lager"],
 		url: 'http://craftprideaustin.com/'
 	},
 	{
 		name: 'Draught House Pub & Brewery',
 		lon: -97.7450796,
 		lat: 30.3110813,
-		beers: [""],
+		beers: ["512 ipa", "512 pecan porter nitro", "alaskan smoked porter", "alesmith speedway stout", "alpine beer company duet", "apricot cider", "bear republic mach 10", "bitburger premium pils", "draught house pub and brewery bock", "boulevard ginger lemon radler", "brooklyn brewery brooklyn summer ale", "collective brewing project tropic thunder", "collective brewing project urban funkhouse saison", "community witbier", "blue owl czech czech", "deschutes jubelale nitro", "deschutes obsidian stout nitro", "destihl wild sour series: here goes nothin'", "dogfish head festina peche", "draught house pub and brewery draught house edel weisse", "draught house pub and brewery draught house sunshade gose", "draught house pub and brewery weizenheimer", "draught house pub and brewery dunkelweizen", "meridian hive meadery dynamo", "fuller's esb", "firestone walker union jack ipa", "founders sumatra mountain brown", "draugt house pub and brewery funkhouser", "green flash sea to sea lager", "guadalupe brewing company guadalupe oaked scotch ale", "guadalupe brewing company guadalupe texas honey ale", "st. james's gate guinniess draught", "ranger creek brewing and distilling hard days night", "victory brewing company hod devil ipa", "hops and grain dispensary series: ipa", "the bruery jardinier", "alltech lexington brewing and distilling kentucky bourbon barrel stout", "knee deep brewing company knee deep citra extra pale ale", "laguinitas brewing company lagunitas aunt sally", "lagunitas brewing company lagunitas maximus", "left hand brewing company left hand sawtooth ale", "left hand brewing company left hand wicked juju", "live oak brewing company live oak hefe weizen", "oasis texas brewing company london homesick ale", "lone pint brewery lone pint yellow rose", "maui brewing company maui brewing coconut porter", "draught house pub and brewery mercyful fate", "oasis texas brewing company metamodern ipa", "the bruery mischief", "new belgium brewing company new belgium / hof ten dormaal lips of faith - golden ale", "new belgium company new belgium la folie brown", "odell brewing company odell cutthroat porter nitro", "odell brewing company odell drumroll", "odell brewing company odell india pale ale", "odell brewing company odell prop! culture", "austin eastciders dry original cider", "paulaner brauerei paulaner oktoberfest bier", "real ale brewing company real ale hans' pils", "revolver brewing revolver blood and honey", "save the world brewing save the world froctum bonum", "sierra nevada brewing company sierra nevada beer camp sweet sunny south southern table beer", "sierra nevada brewing company sierra nevada nooner pilsner", "brasserie de silly silly stupid sour", "draught house pub and brewery smoked weisse", "southern star brewing company southern star bombshell blonde ale", "stone brewing stone enjoy by ipa", "austin eastciders texas honey", "texas keeper cider texas keeper no. 1", "thirsty planet thirsty planet thirsty goat amber", "upslope brewing company upslope thai style white ipa", "victory brewing company victory helles lager", "victory brewing company victory summer love", "victory brewing company victory tart ten", "wasatch brewery wasatch apricot hefewizen"],
 		url: 'http://www.draughthouse.com/'
 	},
 	{
 		name: 'Easy Tiger',
 		lon: -97.737847,
 		lat: 30.265923,
-		beers: [""],
+		beers: ["avery white rascal wheat ale", "karbach sympathy for the lager pale lager", "founders porter american porter", "deschutes chainbreaker white ipa", "brooklyn blast double ipa", "firestone walker pivo pils hoppy pils", "ommegang fleur de houblon belgian pale ale", "austin beerworks pearl snap", "stone go-to session ipa", "ballast point mango even kneel fruit beer", "lakewood all call kolsh", "dogfish head festina peche", "live oak hefe weizen", "odell ipa", "strangleland alemania altbier", "austin beerworks gringo de mayo", "austin eastciders dry original cider", "brooklyn lager amber", "community mosaic ipa american ipa", "lefthand milk stout nitro", "oskar blues old chub nitro scotch ale", "firestone walker sucaba barleywine", "real ale mv coffisar coffee imperial stout", "austin eastciders hopped cider", "boulevard tank 7 saison", "real ale 20th anniversary ryeunion imperial rye ipa", "odell the meddler flanders oud bruin", "firestone walker parabola russian imperial stout", "brooklyn improved old fashioned american strong ale", "revolver sidewinder southwest pale ale"],
 		url: 'http://workhorsebar.com/'
-	},
-	{
-		name: 'Flying Saucer Draught Emporium',
-		lon: -97.7362631,
-		lat: 30.3154336,
-		beers: [""],
-		url: 'http://www.beerknurd.com/locations/austin-flying-saucer'
-	},
-	{
-		name: 'Brew Exchange',
-		lon: -97.7521114,
-		lat: 30.2702684,
-		beers: ["thirsty goat"],
-		url: 'http://brewexchangeaustin.com/'
-	},
-	{
-		name: 'The Ginger Man',
-		lon: -97.7481522,
-		lat: 30.266304,
-		beers: [""],
-		url: 'http://thegingerman.com/austin/'
-	},
-	{
-		name: 'The Brass Tap',
-		lon: -97.6796838,
-		lat: 30.5090713,
-		beers: [""],
-		url: 'http://brasstapbeerbar.com/'
 	}
 ]
 
 $('.well').addClass("hide");
+$('.thumbnail').addClass("hide");
 
 //Where the array of beers is stored for the autocomplete
 new Awesomplete(input, {
 	autoFirst: true,
-	list: ["thirsty planet thirsty goat amber", "zilker brewing marco ipa", "oasis slow ride pale ale", "thirsty planet buckethead ipa", "real ale firemans 4", "512 funky kingston (BLT)", "shiner blonde", "shiner bock", "austin beerworks pearl snap", "austin beerworks heisenberg", "austin beerworks fire eagle", "hops and grain alt-eration", "hell yes", "industry", "day trip", "superliner", "big mama red", "legacy", "austin beerworks black thunder", "austin beerworks peacemaker extra pale", "brewhouse brown ale", "rio blanco pale ale", "full moon pale rye ale", "sisyphus barleywine", "hans pils", "real ale devils backbone", "lost golad API", "austin amber ale", "bootlegger brown ale", "convict hill oatmeal stout", "independence pale ale", "independence stash ipa", "comemrcial suicide", "wytchmaker rye IPA", "black metal imperial stout", "boxers revenge", "whiskey suicide", "drink'in the sunbelt", "pecan porter", "live oak pilz", "live oak big bark amber", "liberation american IPA", "live oak hefeweizen", "revolver blood and honey",  "hops and grain pale dog ale", "the one they call zoe", "belgian golden ale", "belgian saison", "adelbert's naked nun", "adelbert's philosophizer", "deep ellum ipa", "ramber ale", "adelbert's scratchin hippo", "adelbert's black rhino", "adelbert's tripel b", "adelbert's dancin' monks", "rocket 100", "convict hill", "the green room", "sputnik", "heavy machinery double IPA", "recalcitrant dockhand", "cascabel cream stout", "wild bear", "vintage monks", "sweep the leg", "black metal imperial stout", "brahmale", "metamodern session IPA", "hops and grain mosaic pale ale", "hops and grain greenhouse ipa", "the jaguar shark", "hop overboard", "lobo negro", "real heavy", "holiday", "senor viejo", "lonestar", "real ale lost gold", "512 ipa", "512 pecan porter", "austin east ciders dry original cider", "austin beerworks gringo de mayo", "friends and allies noisy cricket", "blue owl spirit animal sour pale ale"]
+	list: ["thirsty planet thirsty goat amber", "zilker brewing marco ipa", "oasis slow ride pale ale", "thirsty planet buckethead ipa", "real ale firemans 4", "512 funky kingston (BLT)", "shiner blonde", "shiner bock", "austin beerworks pearl snap", "austin beerworks heisenberg", "austin beerworks fire eagle", "hops and grain alt-eration", "hell yes", "industry", "day trip", "superliner", "big mama red", "legacy", "austin beerworks black thunder", "austin beerworks peacemaker extra pale", "brewhouse brown ale", "rio blanco pale ale", "full moon pale rye ale", "sisyphus barleywine", "hans pils", "real ale devils backbone", "lost gold API", "bootlegger brown ale", "convict hill oatmeal stout", "independence pale ale", "independence stash ipa", "commercial suicide", "wytchmaker rye IPA", "black metal imperial stout", "boxers revenge", "whiskey suicide", "drink'in the sunbelt", "pecan porter", "live oak pilz", "live oak big bark amber", "liberation american IPA", "live oak hefeweizen", "revolver blood and honey",  "hops and grain pale dog ale", "the one they call zoe", "belgian golden ale", "belgian saison", "adelbert's naked nun", "adelbert's philosophizer", "deep ellum ipa", "ramber ale", "adelbert's scratchin hippo", "adelbert's black rhino", "adelbert's tripel b", "adelbert's dancin' monks", "rocket 100", "convict hill", "the green room", "sputnik", "heavy machinery double IPA", "recalcitrant dockhand", "cascabel cream stout", "wild bear", "vintage monks", "sweep the leg", "black metal imperial stout", "brahmale", "metamodern session IPA", "hops and grain mosaic pale ale", "hops and grain greenhouse ipa", "the jaguar shark", "hop overboard", "lobo negro", "real heavy", "holiday", "senor viejo", "lonestar", "real ale lost gold", "512 ipa", "512 pecan porter", "austin eastciders dry original cider", "austin beerworks gringo de mayo", "friends and allies noisy cricket", "blue owl spirit animal sour pale ale"]
 });
 
 //Might not need this function anymore
@@ -135,6 +108,7 @@ $('#beerSubmit').on('click', function() {
 		});
 	}
 	$('.well').removeClass('hide');
+	$('.thumbnail').removeClass("hide");
 	$("#loading-gif").removeClass('hide').css('display', 'block !important');
 	$('#info').addClass('hide');
 	$('.form-inline').css('margin-top', '35px');
@@ -186,11 +160,21 @@ function initMap() {
   	});
   });
   //place pin to show user position
-  var marker = new google.maps.Marker({
-    position: pos,
-    map: map,
-    title: 'You Are Here'
-  });
+    var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      title: 'You Are Here'
+    });
+    var brewerySpot = {
+    	lat: 30.380054,
+    	lng: -97.730148
+    }
+    var marker = new google.maps.Marker({
+    	position: brewerySpot, 
+    	map: map,
+    	title: 'Austin Beerworks Brewery: Beer of the Month',
+    	icon: '../assets/images/beer_icon.png'
+    });
 
   var service = new google.maps.DistanceMatrixService;
   //get distance of each bar that sells beer user entered
