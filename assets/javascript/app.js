@@ -186,15 +186,15 @@ function initMap() {
   	});
   });
   //place pin to show user position
-    var marker = new google.maps.Marker({
-      position: pos,
-      map: map,
-      title: 'You Are Here'
-    });
+  var marker = new google.maps.Marker({
+    position: pos,
+    map: map,
+    title: 'You Are Here'
+  });
 
   var service = new google.maps.DistanceMatrixService;
   //get distance of each bar that sells beer user entered
-  barArr.forEach(function(bar, index) {
+  barArr.forEach(function(bar) {
   	service.getDistanceMatrix({
   		origins: [pos],
   		destinations: [{lat:bar.lat, lng:bar.lon}],
@@ -230,7 +230,6 @@ function initMap() {
   				var originList = response.originAddresses;
   				var destinationList = response.destinationAddresses;
   				$('#output').html(originList[0] + " to <a href='" + bar.url + "' target='_blank'>" + bar.name + "</a>: " + response.rows[0].elements[0].distance.text + " in " + response.rows[0].elements[0].duration.text);
-
   			}
   		}
   	})
